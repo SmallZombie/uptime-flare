@@ -7,7 +7,7 @@ const pageConfig: PageConfig = {
   ],
   group: {
     '🌐 Public': ['yunsea_monitor'],
-    '🔐 Private': ['gayhub_monitor'],
+    '🔐 Private': ['gayhub_monitor', 'drive_monitor', 'ts_monitor', 'rustdesk_monitor'],
   },
   favicon: 'https://www.avgt.top/favicon.ico',
 }
@@ -31,10 +31,32 @@ const workerConfig: WorkerConfig = {
       tooltip: 'Private Git Service',
       timeout: 10000,
     },
+    {
+      id: 'drive_monitor',
+      name: 'Drive',
+      method: 'GET',
+      target: 'http://drive.avgt.top:5212',
+      timeout: 10000,
+    },
+    {
+      id: 'ts_monitor',
+      name: 'TeamSpeak',
+      method: 'TCP_PING', 
+      target: 'chat.avgt.top:9987',
+      tooltip: 'Voice Server',
+      timeout: 5000,
+    },
+    {
+      id: 'rustdesk_monitor',
+      name: 'RustDesk',
+      method: 'TCP_PING',
+      target: 'rustdesk.avgt.top:21116',
+      tooltip: 'Remote Desktop Signal Server',
+      timeout: 5000,
+    },
   ],
   notification: {
     webhook: {
-      // TODO
       url: 'https://my-webhook-url.com',
       method: 'POST',
       payloadType: 'json',
