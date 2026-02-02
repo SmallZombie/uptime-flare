@@ -41,8 +41,8 @@ const workerConfig: WorkerConfig = {
     {
       id: 'ts_monitor',
       name: 'TeamSpeak',
-      method: 'TCP_PING', 
-      target: 'chat.avgt.top:9987',
+      method: 'GET', 
+      target: 'chat.avgt.top:10080',
       tooltip: 'Voice Server',
       timeout: 5000,
     },
